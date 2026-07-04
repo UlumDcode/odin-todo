@@ -55,3 +55,17 @@ export const renderTodos = (project) => {
     container.appendChild(card);
   });
 };
+
+export const showModal = (title, fieldsHTML) => {
+  const overlay = document.getElementById("modal-overlay");
+  document.getElementById("modal-title").textContent = title;
+  document.getElementById("modal-fields").innerHTML = fieldsHTML;
+  overlay.classList.remove("hidden");
+};
+
+export const hideModal = () => {
+  const overlay = document.getElementById("modal-overlay");
+  overlay.classList.add("hidden");
+
+  document.getElementById("modal-form").reset();
+};
