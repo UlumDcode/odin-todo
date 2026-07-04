@@ -3,13 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="src/assets/style.css" /> -->
-    <link rel="icon" href="src/assets/img/odin-logo.png" />
+    <link rel="icon" href="./src/assets/img/odin-logo.png" />
     <title>Odin Todo List</title>
   </head>
   <body>
-    <header><h1>Odin Todo List</h1></header>
-    <main></main>
-    <footer></footer>
+    <div id="app">
+      <header>
+        <h1>Odin Todo List</h1>
+      </header>
+      <nav id="sidebar">
+        <h2>Projects</h2>
+        <div id="projects-list"></div>
+        <button id="add-project-btn">+ New Project</button>
+      </nav>
+      <main id="main-content"></main>
+      <footer>&copy; Odin Todo List</footer>
+    </div>
   </body>
 </html>

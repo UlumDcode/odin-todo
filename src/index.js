@@ -1,2 +1,3 @@
 import "./assets/style.css";
-// import logo from "./assets/img/odin-logo.png";
+import { createTodo } from "./logic/todo.js";
+import { createProject } from "./logic/project.js";
