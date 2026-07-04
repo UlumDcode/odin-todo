@@ -1,0 +1,40 @@
+{
+  "name": "odin-todo",
+  "version": "1.0.0",
+  "description": "A simple, modular Todo list application built with vanilla JavaScript, Webpack, and LocalStorage for persistence.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack serve --open",
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UlumDcode/odin-todo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/UlumDcode/odin-todo/issues"
+  },
+  "homepage": "https://github.com/UlumDcode/odin-todo#readme",
+  "devDependencies": {
+    "css-loader": "^7.1.4",
+    "gh-pages": "^6.3.0",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.7",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.108.3",
+    "webpack-cli": "^7.1.0",
+    "webpack-dev-server": "^5.2.6"
+  },
+  "dependencies": {
+    "date-fns": "^4.4.0"
+  }
+}
