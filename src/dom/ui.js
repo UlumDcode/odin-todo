@@ -1,7 +1,7 @@
 import { getProjects } from "../logic/app.js";
 import { setActiveProject } from "./handler.js";
 
-const projects = [{ name: "default" }];
+// const projects = [{ name: "default" }];
 
 // render sidebar
 export const renderSidebar = () => {

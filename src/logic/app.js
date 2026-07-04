@@ -2,7 +2,6 @@ import { createProject } from "./project.js";
 import { saveProjects, loadProjects } from "./storage.js";
 
 let projects = [];
-projects.push(createProject("Default"));
 
 const initData = () => {
   const saved = loadProjects();
@@ -10,7 +9,7 @@ const initData = () => {
     projects = saved;
   } else {
     projects.push(createProject("Default"));
-    saveProjects(projects); // Simpan ke localStorage
+    saveProjects(projects);
   }
 };
 

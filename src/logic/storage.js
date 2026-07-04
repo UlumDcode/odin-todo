@@ -3,16 +3,16 @@ import { createTodo } from "./todo.js";
 
 const STORAGE_KEY = "odin-todo-data";
 
-export const saveProject = (project) => {
+export const saveProjects = (projects) => {
   try {
-    const jsonString = JSON.stringify(project);
+    const jsonString = JSON.stringify(projects);
     localStorage.setItem(STORAGE_KEY, jsonString);
   } catch (err) {
-    console.err("gagal menyimpan data ke local storage");
+    console.error("gagal menyimpan data ke local storage");
   }
 };
 
-export function loadProject() {
+export function loadProjects() {
   try {
     const jsonString = localStorage.getItem(STORAGE_KEY);
 
@@ -29,7 +29,7 @@ export function loadProject() {
     });
     return project;
   } catch (err) {
-    console.err("gagal memuat data dari local storage", err);
+    console.error("gagal memuat data dari local storage", err);
     return [];
   }
 }
