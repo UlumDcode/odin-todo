@@ -1,4 +1,5 @@
 import { createProject } from "./project.js";
+import { createTodo } from "./todo.js";
 import { saveProjects, loadProjects } from "./storage.js";
 
 let projects = [];
@@ -8,7 +9,10 @@ const initData = () => {
   if (saved.length > 0) {
     projects = saved;
   } else {
-    projects.push(createProject("Default"));
+    const defaultProject = createProject("Default");
+    defaultProject.addTodo(createTodo("Belajar Webpack", "Menyelesaikan modul webpack di Odin Project", "2026-07-15", "high"));
+    defaultProject.addTodo(createTodo("Baca dokumentasi", "Membaca docs date-fns dan localStorage", "2026-07-12", "medium", "doing"));
+    projects.push(defaultProject);
     saveProjects(projects);
   }
 };
@@ -48,4 +52,8 @@ export const removeTodoFromProject = (projectName, todoId) => {
     project.removeTodo(todoId);
     saveProjects(projects);
   }
+};
+
+export const saveAllProjects = () => {
+  saveProjects(projects);
 };

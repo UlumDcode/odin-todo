@@ -23,7 +23,7 @@ export function loadProjects() {
       const project = createProject(rp.name);
 
       project.todos = rp.todos.map((rt) => {
-        return createTodo(rt.title, rt.description, rt.dueDate, rt.priority);
+        return createTodo(rt.title, rt.description, rt.dueDate, rt.priority, rt.status);
       });
       return project;
     });

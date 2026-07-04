@@ -1,10 +1,10 @@
-export const createTodo = (title, description, dueDate, priority) => {
+export const createTodo = (title, description, dueDate, priority, status = "todo") => {
   return {
     id: crypto.randomUUID(),
     title,
     description,
     dueDate,
     priority,
-    isCompleted: false,
+    status, // "todo" | "doing" | "done"
   };
 };

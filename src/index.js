@@ -7,6 +7,8 @@ import {
   handleAddProject,
   handleAddTodo,
   handleDeleteTodo,
+  handleStatusChange,
+  handleDeleteProject,
   handleModalSubmit,
   setActiveProject,
 } from "./dom/handler.js";
@@ -48,6 +50,17 @@ function init() {
     if (e.target.classList.contains("delete-btn")) {
       const projectName = document.querySelector(".todo-header h2").textContent;
       handleDeleteTodo(projectName, e.target.dataset.id);
+    }
+
+    if (e.target.classList.contains("status-btn")) {
+      const projectName = document.querySelector(".todo-header h2").textContent;
+      handleStatusChange(projectName, e.target.dataset.id, e.target.dataset.status);
+    }
+  });
+
+  document.getElementById("projects-list").addEventListener("click", (e) => {
+    if (e.target.classList.contains("project-delete-btn")) {
+      handleDeleteProject(e.target.dataset.project);
     }
   });
 }

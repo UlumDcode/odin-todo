@@ -1,8 +1,11 @@
 import {
   addProject,
+  removeProject,
   addTodoToProject,
   removeTodoFromProject,
   getProjectByName,
+  getProjects,
+  saveAllProjects,
 } from "../logic/app.js";
 import { createTodo } from "../logic/todo.js";
 import {
@@ -95,4 +98,29 @@ export const handleDeleteTodo = (projectName, todoId) => {
   removeTodoFromProject(projectName, todoId);
   const updatedProject = getProjectByName(projectName);
   renderTodos(updatedProject);
+};
+
+export const handleStatusChange = (projectName, todoId, newStatus) => {
+  const project = getProjectByName(projectName);
+  if (!project) return;
+  const todo = project.todos.find((t) => t.id === todoId);
+  if (!todo) return;
+
+  todo.status = newStatus;
+  saveAllProjects();
+  renderTodos(project);
+};
+
+export const handleDeleteProject = (projectName) => {
+  if (projectName === "Default") {
+    alert("Cannot delete the Default project!");
+    return;
+  }
+  removeProject(projectName);
+  renderSidebar();
+  const projects = getProjects();
+  if (projects.length > 0) {
+    setActiveProject(projects[0]);
+    renderTodos(projects[0]);
+  }
 };
