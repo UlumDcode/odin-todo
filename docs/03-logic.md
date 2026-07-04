@@ -127,6 +127,26 @@ export const getProjectByName = (name) => {
 export const removeProject = (name) => {
   projects = projects.filter(project => project.name !== name);
 };
+
+/**
+ * Menambahkan Todo ke dalam proyek tertentu.
+ * @param {string} projectName - Nama proyek tujuan
+ * @param {object} todo - Objek Todo (hasil dari createTodo)
+ */
+export const addTodoToProject = (projectName, todo) => {
+  const project = getProjectByName(projectName);
+  if (project) project.addTodo(todo);
+};
+
+/**
+ * Menghapus Todo dari proyek tertentu.
+ * @param {string} projectName - Nama proyek
+ * @param {string} todoId - ID Todo yang akan dihapus
+ */
+export const removeTodoFromProject = (projectName, todoId) => {
+  const project = getProjectByName(projectName);
+  if (project) project.removeTodo(todoId);
+};
 ```
 
 ---

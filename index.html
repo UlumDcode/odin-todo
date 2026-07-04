@@ -11,13 +11,34 @@
       <header>
         <h1>Odin Todo List</h1>
       </header>
+
       <nav id="sidebar">
         <h2>Projects</h2>
         <div id="projects-list"></div>
         <button id="add-project-btn">+ New Project</button>
       </nav>
+
       <main id="main-content"></main>
+
       <footer>&copy; Odin Todo List</footer>
+    </div>
+
+    <!-- MODAL OVERLAY -->
+    <div id="modal-overlay" class="modal-overlay hidden">
+      <div class="modal-box">
+        <div class="modal-header">
+          <h3 id="modal-title">Add New</h3>
+          <button id="modal-close-btn" class="modal-close">&times;</button>
+        </div>
+        <form id="modal-form">
+          <div id="modal-fields">
+            <!-- Fields akan diisi oleh JavaScript -->
+          </div>
+          <button type="submit" id="modal-submit-btn" class="modal-submit">
+            Save
+          </button>
+        </form>
+      </div>
     </div>
   </body>
 </html>
