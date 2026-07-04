@@ -53,6 +53,237 @@ header {
   overflow-y: auto;
 }
 
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-overlay.hidden {
+  display: none;
+}
+
+.modal-box {
+  background: white;
+  border-radius: 8px;
+  width: 420px;
+  max-width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #999;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  color: #333;
+}
+
+#modal-form {
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: rgb(64, 58, 58);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #f3d8b8;
+}
+
+.modal-submit {
+  width: 100%;
+  padding: 10px;
+  background: #f3d8b8;
+  color: rgb(64, 58, 58);
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.modal-submit:hover {
+  background: #e8c8a8;
+}
+
+/* Sidebar Buttons */
+#projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.project-btn {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.project-btn:hover {
+  background: #f3d8b844;
+}
+
+#add-project-btn {
+  width: 100%;
+  padding: 10px;
+  background: #f3d8b8;
+  color: rgb(64, 58, 58);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#add-project-btn:hover {
+  background: #e8c8a8;
+}
+
+/* Todo Header */
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.todo-header h2 {
+  font-size: 22px;
+}
+
+#add-todo-btn {
+  padding: 8px 16px;
+  background: #f3d8b8;
+  color: rgb(64, 58, 58);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#add-todo-btn:hover {
+  background: #e8c8a8;
+}
+
+/* Todo Cards */
+.todo-card {
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-card:hover {
+  border-color: #f3d8b8;
+}
+
+.todo-title {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.todo-due-date {
+  font-size: 12px;
+  color: #999;
+}
+
+.todo-priority {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.priority-low {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.priority-medium {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+.priority-high {
+  background: #fbe9e7;
+  color: #c62828;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 4px 8px;
+}
+
+.delete-btn:hover {
+  color: #c62828;
+}
+
 /* Footer  */
 footer {
   grid-column: 1 / -1;

@@ -5,6 +5,6 @@ export const createTodo = (title, description, dueDate, priority) => {
     description,
     dueDate,
     priority,
-    isComplited: false,
+    isCompleted: false,
   };
 };

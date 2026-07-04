@@ -1,4 +1,5 @@
-import { getProjects } from "../logic/app";
+import { getProjects } from "../logic/app.js";
+import { setActiveProject } from "./handler.js";
 
 const projects = [{ name: "default" }];
 
@@ -9,16 +10,16 @@ export const renderSidebar = () => {
 
   container.innerHTML = "";
 
-  projects.map((projects) => {
+  projects.forEach((project) => {
     const btn = document.createElement("button");
-    btn.textContent = projects.name;
+    btn.textContent = project.name;
     btn.classList.add("project-btn");
 
     btn.addEventListener("click", () => {
       renderTodos(project);
     });
 
-    container.appendChlid(btn);
+    container.appendChild(btn);
   });
 };
 
@@ -68,4 +69,13 @@ export const hideModal = () => {
   overlay.classList.add("hidden");
 
   document.getElementById("modal-form").reset();
+};
+
+export const getModalData = (fieldsIds) => {
+  const data = {};
+  fieldsIds.map((id) => {
+    const el = document.getElementById(id);
+    if (el) data[id] = el.value;
+  });
+  return data;
 };
